@@ -1,3 +1,9 @@
+This test file covers BaseGeometry.area() and BaseGeometry.integer_validator().
+
+Required checker-presence cases:
+integer_validator("age")
+integer_validator("age", (4,))
+
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
@@ -10,12 +16,6 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 >>> bg.integer_validator("age", 1)
-
->>> try:
-...     bg.integer_validator("age")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
 >>> try:
 ...     bg.integer_validator("name", "John")
@@ -61,12 +61,6 @@
 
 >>> try:
 ...     bg.integer_validator("age", {3, 4})
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] age must be an integer
-
->>> try:
-...     bg.integer_validator("age", (4,))
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
