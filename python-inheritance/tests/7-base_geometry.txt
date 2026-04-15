@@ -1,6 +1,6 @@
-This test file covers BaseGeometry.area() and BaseGeometry.integer_validator().
+BaseGeometry tests.
 
-Required checker-presence cases:
+Required presence:
 integer_validator("age")
 integer_validator("age", (4,))
 
