@@ -39,17 +39,14 @@ class Rectangle(Shape):
     """Rectangle class."""
 
     def __init__(self, width, height):
-        """Initialize rectangle."""
         self.width = width
         self.height = height
 
     def area(self):
-    return self.width * self.height
+        return self.width * self.height
 
     def perimeter(self):
-        """Return perimeter of rectangle."""
         return 2 * (abs(self.width) + abs(self.height))
-
 
 def shape_info(shape):
     """Print area and perimeter using duck typing."""
