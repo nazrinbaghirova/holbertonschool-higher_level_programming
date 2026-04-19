@@ -29,16 +29,20 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
+    """Rectangle class."""
+
     def __init__(self, width, height):
+        """Initialize rectangle."""
         self.width = width
         self.height = height
 
     def area(self):
+        """Return area of rectangle."""
         return self.width * self.height
 
     def perimeter(self):
+        """Return perimeter of rectangle."""
         return 2 * (abs(self.width) + abs(self.height))
-
 
 def shape_info(shape):
     print("Area:", shape.area())
