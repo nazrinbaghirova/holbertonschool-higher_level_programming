@@ -44,12 +44,10 @@ class Rectangle(Shape):
         self.height = height
 
     def area(self):
-        """Return area of rectangle."""
-        return self.width * self.height
+    return math.pi * (abs(self.radius) ** 2)
 
-    def perimeter(self):
-        """Return perimeter of rectangle."""
-        return 2 * (self.width + self.height)
+def perimeter(self):
+    return 2 * math.pi * abs(self.radius)
 
 
 def shape_info(shape):
