@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Module to fetch and process API data."""
+"""Fetch and process data from an API"""
 
-import csv
 import requests
+import csv
 
 
 def fetch_and_print_posts():
-    """Fetch posts from API and print their titles."""
+    """Fetch posts and print their titles"""
     url = "https://jsonplaceholder.typicode.com/posts"
     response = requests.get(url)
 
@@ -19,14 +19,14 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
-    """Fetch posts from API and save selected data to CSV."""
+    """Fetch posts and save them into a CSV file"""
     url = "https://jsonplaceholder.typicode.com/posts"
     response = requests.get(url)
 
     if response.status_code == 200:
         posts = response.json()
-        data = []
 
+        data = []
         for post in posts:
             data.append({
                 "id": post.get("id"),
@@ -34,7 +34,7 @@ def fetch_and_save_posts():
                 "body": post.get("body")
             })
 
-        with open("posts.csv", "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=["id", "title", "body"])
+        with open("posts.csv", "w", newline="", encoding="utf-8") as file:
+            writer = csv.DictWriter(file, fieldnames=["id", "title", "body"])
             writer.writeheader()
             writer.writerows(data)
