@@ -1,0 +1,19 @@
+I installed curl and checked it using the command curl --version.
+
+I used curl to fetch data from a website:
+curl https://www.ada.edu.az/en  
+This returned the HTML content of the webpage.
+
+Then I used curl to interact with a public API:
+curl https://jsonplaceholder.typicode.com/posts  
+This returned a JSON array of posts containing fields like userId, id, title, and body.
+
+To view only the headers of the response, I used:
+curl -I https://jsonplaceholder.typicode.com/posts  
+This returned information such as the status code (200 OK), content type, and other headers.
+
+To send data to the API, I used a POST request:
+curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode.com/posts  
+This returned a JSON response representing the created object, including an id.
+
+From this task, I learned how to use curl to send HTTP requests, retrieve data, inspect headers, and interact with APIs from the command line.
